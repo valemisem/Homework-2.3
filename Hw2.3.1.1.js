@@ -29,20 +29,21 @@ for (let player in players) {
 }
 console.log(score); // новый массив с баллами
 
-
 const maxValue = Math.max.apply(null, score);
 console.log(maxValue); // вывела максимальное значение
 
-// 1. используя функцию с лекции: 
+// 1. используя функцию с лекции с использованием forEach:
 
-function first(array) { // функция создаёт массив для вывода всех баллов
-    let scoresArray = []
-    array.forEach(players => {
-        scoresArray.push(players.scorePoints) // создали МАССИВ 
-    });
-    console.log(scoresArray) // сейчас вывод просиходит МАССИВОМ
+let newArray = [];
+function first(array, newArray) {
+  // функция создаёт массив для вывода всех баллов
+
+  array.forEach((players) => {
+    newArray.push(players.scorePoints); // создали МАССИВ
+  });
+  console.log(newArray);
 }
-first(players) // использовали функцию, в output вывели массив. ВОПРОС: КАК ДОСТАТЬ МАССИВ ИЗ ФУНКЦИИ?
+first(players, newArray);
 
-const maxV = Math.max.apply(null, scoreArray); // ОШИБКА! scoreArray НЕ СУЩЕСТВУЕТ, ТК МНЕ ЕГО НЕ ДОСТАТЬ ИЗ ФУНКЦИИ.
-console.log(maxV);
+const maxV = Math.max.apply(null, newArray);
+console.log(maxV); // вывела максимальное значение
